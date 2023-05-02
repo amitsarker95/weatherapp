@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<video autoplay muted loop id="myVideo">
+    <source src="https://drive.google.com/u/0/uc?id=1QIz7XPxhQip6KNl_4bLTElRflN1gmDiw&export=download" type="video/mp4">
+</video>
+
+<div class="mainpage backdrop-blur-sm">
+    <!-- Navbar Section start--> 
+    <div class="navbar-section">
+     <div class="navbar bg-[#3B2F61] flex justify-between px-[100px]">
+         <div class="">
+           <a class="btn btn-ghost normal-case text-white text-lg">Weather App</a>
+         </div>
+         <div class="flex"> 
+         </div>
+       </div>
+    </div>
+    <!-- Navbar Section end--> 
+ 
+    <!--Search section start-->
+    <div class="search flex justify-center items-center mt-[8%] flex-col">
+     <h1 class="text-[#f5e53b] text-3xl font-bold"> <span class="text-[#fff]" style="background: #3B2F61; padding: 10px; border-radius: 20px;"> Stay Ahead of the </span>  Weather with Accurate and User-Friendly App</h1>
+     <img src="{% static 'images/sun.png' %}" alt="" style="width:160px" class="p-3">
+     
+     <form action="" method="POST">
+       {% csrf_token %}
+         <input type="text" name="city" class="search_input" placeholder="Enter a city name .......">
+         <div class="button-section flex justify-center items-center pt-[10%]">
+             <button type="submit" class="text-xl bg-[#625980] text-[#fff] tracking-wide">
+                 <span class="span-mother">
+                     <span>S</span>
+                     <span>e</span>
+                     <span>a</span>
+                     <span>r</span>
+                     <span>c</span>
+                     <span>h</span>
+                 </span>
+                 <span class="span-mother2">
+                     <span>S</span>
+                     <span>e</span>
+                     <span>a</span>
+                     <span>r</span>
+                     <span>c</span>
+                     <span>h</span>
+                 </span>
+               </button>
+         </form>
+        </div>
+     </div>
+    <!--Search section end-->
+     </div>
+     <script>
+       var vid = document.getElementById("myVideo");
+       vid.playbackRate = 3;
+     </script>
+
+{% endblock content %}

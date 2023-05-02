@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<video autoplay muted loop id="myVideo">
+    <source src="https://drive.google.com/u/0/uc?id=1QIz7XPxhQip6KNl_4bLTElRflN1gmDiw&export=download" type="video/mp4">
+  </video>
+    <!-- Navbar Section start--> 
+    <div class="navbar-section">
+      <div class="navbar bg-[#3B2F61] relative flex justify-between px-[100px]">
+          <div class="">
+            <a class="btn btn-ghost normal-case text-[#fff] text-lg" href="{% url 'home' %}">Weather App</a>
+          </div>
+          <div class="flex"> 
+          </div>
+        </div>
+     </div>
+   <!-- Navbar Section end--> 
+    <!--Weather Informations part-->
+     <div class="result_section flex items-center justify-center mt-[3%] flex-col">
+      <img src="{% static 'images/sun.png' %}" alt="" style="width:160px" class="p-5 relative">
+      <div class="card">
+        <h1 class="text-[#fff] text-[24px]">Weather of <b>{{city_name}}</b> &nbsp; in &nbsp; <b>{{country_code}}</b></h1>
+        <br>
+            <ul>
+                <li class="text-[#fff] text-lg "><span style="background:blue" >Temperature in celsius : </span> &nbsp;{{temp}}</li>
+                <li class="text-[#fff] text-lg "><span style="background:blue">Feels like in celsius: </span>&nbsp;{{feels_like}}</li>
+                <li class="text-[#fff] text-lg "><span style="background:blue">Coordinates [X,Y] : </span>&nbsp;{{coordinate}}</li>
+                <li class="text-[#fff] text-lg "><span style="background:blue">Pressure : </span>&nbsp;{{pressure}}</li>
+                <li class="text-[#fff] text-lg "><span style="background:blue">Humidity : </span>&nbsp;{{humidity}}</li>
+                <li class="text-[#fff] text-lg "><span style="background:blue">Description : </span>&nbsp;{{description}}</li>
+                <li class="text-[#fff] text-lg "><span style="background:blue">Forecast : </span>&nbsp;{{main}}<img src="http://openweathermap.org/img/w/{{icon}}.png" alt="image" style="width:70px"></li>
+            </ul>
+    </div>
+     </div>
+
+   <script>
+    var vid = document.getElementById("myVideo");
+    vid.playbackRate = 3;
+  </script>
+
+{% endblock content %}
